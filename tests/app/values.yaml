@@ -12,7 +12,8 @@ strategy: {}
 
 nameOverride: ""
 fullnameOverride: ""
-imagePullSecrets: []
+imagePullSecrets:
+  - name: ghrc.io
 
 # Configure Laravel PHP-FPM container.
 app:
