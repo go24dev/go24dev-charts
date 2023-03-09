@@ -37,7 +37,7 @@ app:
   # be a secret that contains an ".env" data key with the full
   # .env file that will be copied during pod creation.
   # The secret should be created by you before running the app.
-  # envSecretName: ""
+  envSecretName: "octane-env"
 
   resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
