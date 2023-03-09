@@ -5,7 +5,7 @@ on:
     paths:
       - charts/octane/**
       - .github/workflows/charts-octane-ci.yml
-      - tests/**
+      # - tests/**
 
 jobs:
   release:
