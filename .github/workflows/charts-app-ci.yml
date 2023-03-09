@@ -5,6 +5,7 @@ on:
     paths:
       - charts/app/**
       - .github/workflows/charts-app-ci.yml
+      - tests/**
 
 jobs:
   release:
