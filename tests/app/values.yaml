@@ -239,7 +239,7 @@ ingress:
     # kubernetes.io/tls-acme: "true"
   class: "nginx"
   hosts:
-    - host: test.laravel.com
+    - host: app.laravel.com
       paths:
         - /
   tls: []
