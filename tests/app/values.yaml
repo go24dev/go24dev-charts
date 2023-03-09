@@ -13,7 +13,7 @@ strategy: {}
 nameOverride: ""
 fullnameOverride: ""
 imagePullSecrets:
-  - name: ghrc.io
+  - name: github-container-registry
 
 # Configure Laravel PHP-FPM container.
 app:
@@ -117,7 +117,7 @@ nginx:
   healthcheck:
     enabled: true
     period: 5
-    path: /health
+    path: /healthz
 
   # Specify the Config name to pull the nginx configuration from.
   # If not specified, it defaults to "{release name}-nginx-config".

@@ -13,7 +13,7 @@ strategy: {}
 nameOverride: ""
 fullnameOverride: ""
 imagePullSecrets:
-  - name: ghrc.io
+  - name: github-container-registry
 
 # Configure Octane-based Laravel container.
 app:
@@ -69,7 +69,7 @@ app:
   healthcheck:
     enabled: true
     period: 5
-    path: /health
+    path: /healthz
 
 serviceAccount:
   # Specifies whether a service account should be created

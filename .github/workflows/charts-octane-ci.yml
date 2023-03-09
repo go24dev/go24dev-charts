@@ -35,14 +35,13 @@ jobs:
           driver: docker
           start args: "--addons=registry --addons=ingress"
 
-      - uses: azure/k8s-create-secret@v4
-        name: Set imagePullSecret
-        with:
-            secret-name: 'ghrc.io'
-            container-registry-url: ghcr.io
-            container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
-            container-registry-password: ${{ secrets.GITHUB_TOKEN }}
-        id: create-secret
+      - name: Configure Image Pull Secret
+        run: |
+          kubectl create secret docker-registry github-container-registry \
+            --namespace=default \
+            --docker-server=ghcr.io \
+            --docker-username=${{ secrets.REGISTRY_USERNAME }} \
+            --docker-password=${{ secrets.REGISTRY_TOKEN }}
 
       - name: Configure Git
         run: |
