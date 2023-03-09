@@ -3,13 +3,13 @@ apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   labels:
-    {{- include "laravel-octane.labels" . | nindent 4 }}
-  name: {{ include "laravel-octane.fullname" . }}
+    {{- include "octane.labels" . | nindent 4 }}
+  name: {{ include "octane.fullname" . }}
 spec:
   selector:
     matchLabels:
-      {{- include "laravel-octane.selectorLabels" . | nindent 6 }}
-      octane.laravel.com/pod-type: web
+      {{- include "octane.selectorLabels" . | nindent 6 }}
+      octane/pod-type: web
   {{- if .Values.pdb.minAvailable }}
   minAvailable: {{ .Values.pdb.minAvailable }}
   {{- end }}

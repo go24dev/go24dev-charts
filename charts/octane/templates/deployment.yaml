@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "laravel-octane.fullname" . }}
+  name: {{ include "octane.fullname" . }}
   labels:
-    {{- include "laravel-octane.labels" . | nindent 4 }}
+    {{- include "octane.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -14,8 +14,8 @@ spec:
   {{- end }}
   selector:
     matchLabels:
-      {{- include "laravel-octane.selectorLabels" . | nindent 6 }}
-      octane.laravel.com/pod-type: web
+      {{- include "octane.selectorLabels" . | nindent 6 }}
+      octane/pod-type: web
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -23,8 +23,8 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "laravel-octane.selectorLabels" . | nindent 8 }}
-        octane.laravel.com/pod-type: web
+        {{- include "octane.selectorLabels" . | nindent 8 }}
+        octane/pod-type: web
     spec:
       volumes:
         - name: env
@@ -42,7 +42,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
 
-      serviceAccountName: {{ include "laravel-octane.serviceAccountName" . }}
+      serviceAccountName: {{ include "octane.serviceAccountName" . }}
 
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}

@@ -331,7 +331,7 @@ scheduler:
     period: 5
 
 phpFpmConf:
-  # Specify the Config name to pull the laravel.conf configuration from.
+  # Specify the Config name to pull the app.conf configuration from.
   # If not specified, it defaults to "{release name}-php-fpm-config".
   # This will be automatically be created for you if you do not specify it.
   # configName: ""

@@ -1,4 +1,4 @@
-- [Laravel Octane Helm Chart](#laravel-octane-helm-chart)
+- [Laravel Octane Helm Chart](#octane-helm-chart)
   - [🛑 Requirements](#-requirements)
   - [🚀 Installation](#-installation)
     - [📜 Environment variables](#-environment-variables)
@@ -33,17 +33,17 @@ $ helm repo update
 Install Laravel Octane chart:
 
 ```bash
-$ helm upgrade laravel-octane-app \
+$ helm upgrade octane-app \
     --install \
     --version=1.0.0 \
-    renoki-co/laravel-octane
+    renoki-co/octane
 ```
 
 Check `values.yaml` for additional available customizations.
 
 ### 📜 Environment variables
 
-Laravel needs an `.env` file to keep secrets within, so you will need a secret from which they will be pulled. To do this, simply create a `laravel-octane-app-env` secret with the `.env` key if your helm release is called `laravel-octane-app`.
+Laravel needs an `.env` file to keep secrets within, so you will need a secret from which they will be pulled. To do this, simply create a `octane-app-env` secret with the `.env` key if your helm release is called `octane-app`.
 
 To replace the name, check for `app.envSecretName` in `values.yaml`. By default, the name is `<release name>-env`.
 
@@ -51,7 +51,7 @@ To replace the name, check for `app.envSecretName` in `values.yaml`. By default,
 kind: Secret
 apiVersion: v1
 metadata:
-  name: laravel-octane-app-env
+  name: octane-app-env
 stringData:
   .env: |
     APP_NAME=Laravel

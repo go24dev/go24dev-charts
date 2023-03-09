@@ -3,13 +3,13 @@ apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   labels:
-    {{- include "laravel.labels" . | nindent 4 }}
-  name: {{ include "laravel.fullname" . }}
+    {{- include "app.labels" . | nindent 4 }}
+  name: {{ include "app.fullname" . }}
 spec:
   selector:
     matchLabels:
-      {{- include "laravel.selectorLabels" . | nindent 6 }}
-      laravel.com/pod-type: web
+      {{- include "app.selectorLabels" . | nindent 6 }}
+      app/pod-type: web
   {{- if .Values.pdb.minAvailable }}
   minAvailable: {{ .Values.pdb.minAvailable }}
   {{- end }}
