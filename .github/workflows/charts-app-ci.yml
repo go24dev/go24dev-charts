@@ -3,7 +3,7 @@ name: charts/app
 on:
   push:
     paths:
-      - charts/app/**
+      # - charts/app/**
       - .github/workflows/charts-app-ci.yml
       # - tests/**
 

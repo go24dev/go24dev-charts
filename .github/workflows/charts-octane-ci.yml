@@ -3,7 +3,7 @@ name: charts/octane
 on:
   push:
     paths:
-      - charts/octane/**
+      # - charts/octane/**
       - .github/workflows/charts-octane-ci.yml
       # - tests/**
 

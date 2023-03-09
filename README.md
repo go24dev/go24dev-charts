@@ -1,4 +1,4 @@
-Renoki Co. Helm Repo
+NHAM24 Helm Repo
 ====================
 
 Helm Charts provided by Renoki Co. 🚀
